@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D76013E925EFDD9900ADE8CC /* Manager.m */; };
 		D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD125C94C58001EC0C0 /* AppDelegate.m */; };
 		D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD425C94C58001EC0C0 /* SceneDelegate.m */; };
 		D7921FD825C94C58001EC0C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD725C94C58001EC0C0 /* ViewController.m */; };
@@ -15,11 +16,12 @@
 		D7921FE025C94C5A001EC0C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7921FDE25C94C5A001EC0C0 /* LaunchScreen.storyboard */; };
 		D7921FE325C94C5A001EC0C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FE225C94C5A001EC0C0 /* main.m */; };
 		D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FEB25C94D72001EC0C0 /* RNView.m */; };
-		D7921FF325C96460001EC0C0 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = D7921FF225C96460001EC0C0 /* index.js */; };
 		D7921FF725C9689A001EC0C0 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FF625C9689A001EC0C0 /* Console.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D76013E825EFDD9900ADE8CC /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		D76013E925EFDD9900ADE8CC /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
 		D7921FCD25C94C58001EC0C0 /* tiny-react-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiny-react-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7921FD025C94C58001EC0C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7921FD125C94C58001EC0C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D76013E725EFDD7700ADE8CC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D76013E825EFDD9900ADE8CC /* Manager.h */,
+				D76013E925EFDD9900ADE8CC /* Manager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		D7921FC425C94C58001EC0C0 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +82,7 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D76013E725EFDD7700ADE8CC /* Manager */,
 				D7921FF425C9687C001EC0C0 /* Console */,
 				D7921FED25C954A9001EC0C0 /* js */,
 				D7921FE925C94D26001EC0C0 /* RNView */,
@@ -172,7 +184,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7921FF325C96460001EC0C0 /* index.js in Resources */,
 				D7921FE025C94C5A001EC0C0 /* LaunchScreen.storyboard in Resources */,
 				D7921FDD25C94C5A001EC0C0 /* Assets.xcassets in Resources */,
 				D7921FDB25C94C58001EC0C0 /* Main.storyboard in Resources */,
@@ -192,6 +203,7 @@
 				D7921FE325C94C5A001EC0C0 /* main.m in Sources */,
 				D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */,
 				D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */,
+				D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
