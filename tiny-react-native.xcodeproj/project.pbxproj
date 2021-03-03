@@ -14,6 +14,9 @@
 		D7921FDD25C94C5A001EC0C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7921FDC25C94C5A001EC0C0 /* Assets.xcassets */; };
 		D7921FE025C94C5A001EC0C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7921FDE25C94C5A001EC0C0 /* LaunchScreen.storyboard */; };
 		D7921FE325C94C5A001EC0C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FE225C94C5A001EC0C0 /* main.m */; };
+		D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FEB25C94D72001EC0C0 /* RNView.m */; };
+		D7921FF325C96460001EC0C0 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = D7921FF225C96460001EC0C0 /* index.js */; };
+		D7921FF725C9689A001EC0C0 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FF625C9689A001EC0C0 /* Console.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		D7921FDF25C94C5A001EC0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7921FE125C94C5A001EC0C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7921FE225C94C5A001EC0C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7921FEA25C94D72001EC0C0 /* RNView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNView.h; sourceTree = "<group>"; };
+		D7921FEB25C94D72001EC0C0 /* RNView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNView.m; sourceTree = "<group>"; };
+		D7921FEE25C954C1001EC0C0 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		D7921FF225C96460001EC0C0 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		D7921FF525C9689A001EC0C0 /* Console.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Console.h; sourceTree = "<group>"; };
+		D7921FF625C9689A001EC0C0 /* Console.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Console.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +54,7 @@
 		D7921FC425C94C58001EC0C0 = {
 			isa = PBXGroup;
 			children = (
+				D7921FF225C96460001EC0C0 /* index.js */,
 				D7921FCF25C94C58001EC0C0 /* tiny-react-native */,
 				D7921FCE25C94C58001EC0C0 /* Products */,
 			);
@@ -61,6 +71,9 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D7921FF425C9687C001EC0C0 /* Console */,
+				D7921FED25C954A9001EC0C0 /* js */,
+				D7921FE925C94D26001EC0C0 /* RNView */,
 				D7921FD025C94C58001EC0C0 /* AppDelegate.h */,
 				D7921FD125C94C58001EC0C0 /* AppDelegate.m */,
 				D7921FD325C94C58001EC0C0 /* SceneDelegate.h */,
@@ -74,6 +87,32 @@
 				D7921FE225C94C5A001EC0C0 /* main.m */,
 			);
 			path = "tiny-react-native";
+			sourceTree = "<group>";
+		};
+		D7921FE925C94D26001EC0C0 /* RNView */ = {
+			isa = PBXGroup;
+			children = (
+				D7921FEA25C94D72001EC0C0 /* RNView.h */,
+				D7921FEB25C94D72001EC0C0 /* RNView.m */,
+			);
+			path = RNView;
+			sourceTree = "<group>";
+		};
+		D7921FED25C954A9001EC0C0 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				D7921FEE25C954C1001EC0C0 /* index.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		D7921FF425C9687C001EC0C0 /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				D7921FF525C9689A001EC0C0 /* Console.h */,
+				D7921FF625C9689A001EC0C0 /* Console.m */,
+			);
+			path = Console;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7921FF325C96460001EC0C0 /* index.js in Resources */,
 				D7921FE025C94C5A001EC0C0 /* LaunchScreen.storyboard in Resources */,
 				D7921FDD25C94C5A001EC0C0 /* Assets.xcassets in Resources */,
 				D7921FDB25C94C58001EC0C0 /* Main.storyboard in Resources */,
@@ -147,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7921FD825C94C58001EC0C0 /* ViewController.m in Sources */,
+				D7921FF725C9689A001EC0C0 /* Console.m in Sources */,
 				D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */,
 				D7921FE325C94C5A001EC0C0 /* main.m in Sources */,
 				D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */,
+				D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
