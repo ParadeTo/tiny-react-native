@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RNView/RNView.h"
+#import "FileLoader.h"
 #import "Console.h"
 #import "Manager.h"
 #import <JavaScriptCore/JavaScriptCore.h>
@@ -35,28 +36,31 @@
 //    NSString * path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"js"];
 //    NSData * jsData = [[NSData alloc]initWithContentsOfFile:path];
 //    NSString * jsCode = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
-    self.jsContext = [[JSContext alloc]init];
+//    self.jsContext = [[JSContext alloc]init];
 //    NSString *jsCode = @"function hi(){ return 'hi' }; hi()";
 //    JSValue *value1 = [self.jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
 //    NSLog([value1 toString]);
 //    JSValue *value2 = [self.jsContext evaluateScript:@"(function() { return 'hello objc' })"];
 //    NSLog([[value2 callWithArguments:nil] toString]);
-    Manager *m = [[Manager alloc] init];
-    Console *c = [[Console alloc] init];
-//    [[m createConsole] log:@"ddd"];
-    self.jsContext[@"Manager"] = m;
-    self.jsContext[@"myconsole"] = c;
-    JSValue *value3 = [self.jsContext evaluateScript:@"myconsole.log('aaa')"];
-    NSLog([value3 toString]);
-    Console *c = [[Console alloc] init];
-    [self.jsContext setExceptionHandler:^(JSContext *context, JSValue *value) {
-           NSLog(@"%@", value);
-       }];
+//    Manager *m = [[Manager alloc] init];
+//    Console *c = [[Console alloc] init];
+//    self.jsContext[@"Manager"] = m;
+//    self.jsContext[@"myconsole"] = c;
+//    JSValue *value3 = [self.jsContext evaluateScript:@"myconsole.log('aaa')"];
+//    NSLog([value3 toString]);
+//    Console *c = [[Console alloc] init];
+//    [self.jsContext setExceptionHandler:^(JSContext *context, JSValue *value) {
+//           NSLog(@"%@", value);
+//       }];
 //    NSLog([value3 toString]);
 //    self.jsContext[@"addRNView"] = ^{
 //        [self addRNView];
 //    };
 //    JSValue *value4 = [self.jsContext evaluateScript:@"addRNView()"];
+    FileLoader *loader = [[FileLoader alloc] init];
+    [loader loadJsFile:^(BOOL success, NSString * _Nonnull path) {
+        NSLog(path);
+    }];
 }
 
 
