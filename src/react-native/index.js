@@ -11,27 +11,13 @@ const HostConfig = {
     currentHostContext,
     workInProgress
   ) {
-    console.log(type)
-    // let element
-    // switch (type) {
-    //   case 'rect':
-    //     element = new Rect(newProps)
-    //     break
-    //   case 'circle':
-    //     element = new Circle(newProps)
-    //     break
-    //   case 'text':
-    //     element = new Text(newProps)
-    //     break
-    //   default:
-    //     break
-    // }
-    return
+    return RNManager.createElement(type)
   },
   /* 操作子组件 */
   appendInitialChild(parent, child) {
-    parent.appendChild(child)
     debugger
+
+    parent.appendChild(child)
   },
   appendChildToContainer(parent, child) {
     parent.appendChild(child)
@@ -59,11 +45,7 @@ const HostConfig = {
     instance.update(newProps)
   },
 
-  // react 流程结束后，调用此方法，我们可以在这里触发我们的渲染器重新渲染
-  // 此处参考 remax：https://github.com/remaxjs/remax/blob/80606f640b08c79b9fc61d52a03355f0282c5e14/packages/remax-runtime/src/hostConfig/index.ts#L63
-  resetAfterCommit: function (rootContainerInstance) {
-    rootContainerInstance.render()
-  },
+  resetAfterCommit: function (rootContainerInstance) {},
 
   getRootHostContext(nextRootInstance) {
     const rootContext = {}
@@ -104,7 +86,7 @@ const HostConfig = {
   ) {},
   shouldSetTextContent: function (...args) {},
 }
-debugger
+
 const reconcilerInstance = Reconciler(HostConfig)
 
 const CanvasRenderer = {

@@ -4,4 +4,7 @@ export default {
     renderDom.appendChild(root)
     return root
   },
+  createElement(type) {
+    return document.createElement('div')
+  },
 }

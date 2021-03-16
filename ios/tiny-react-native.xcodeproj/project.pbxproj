@@ -17,6 +17,7 @@
 		D7921FE325C94C5A001EC0C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FE225C94C5A001EC0C0 /* main.m */; };
 		D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FEB25C94D72001EC0C0 /* RNView.m */; };
 		D7921FF725C9689A001EC0C0 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FF625C9689A001EC0C0 /* Console.m */; };
+		D794E78A2600AF7000458039 /* FileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D794E7892600AF7000458039 /* FileLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		D7921FF225C96460001EC0C0 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		D7921FF525C9689A001EC0C0 /* Console.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Console.h; sourceTree = "<group>"; };
 		D7921FF625C9689A001EC0C0 /* Console.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Console.m; sourceTree = "<group>"; };
+		D794E7882600AF7000458039 /* FileLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileLoader.h; sourceTree = "<group>"; };
+		D794E7892600AF7000458039 /* FileLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D794E7872600AF4800458039 /* FileLoader */,
 				D76013E725EFDD7700ADE8CC /* Manager */,
 				D7921FF425C9687C001EC0C0 /* Console */,
 				D7921FED25C954A9001EC0C0 /* js */,
@@ -125,6 +129,15 @@
 				D7921FF625C9689A001EC0C0 /* Console.m */,
 			);
 			path = Console;
+			sourceTree = "<group>";
+		};
+		D794E7872600AF4800458039 /* FileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				D794E7882600AF7000458039 /* FileLoader.h */,
+				D794E7892600AF7000458039 /* FileLoader.m */,
+			);
+			path = FileLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +216,7 @@
 				D7921FE325C94C5A001EC0C0 /* main.m in Sources */,
 				D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */,
 				D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */,
+				D794E78A2600AF7000458039 /* FileLoader.m in Sources */,
 				D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
