@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D705CD28260777A100F284C3 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D705CD27260777A100F284C3 /* Bridge.m */; };
 		D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D76013E925EFDD9900ADE8CC /* Manager.m */; };
 		D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD125C94C58001EC0C0 /* AppDelegate.m */; };
 		D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD425C94C58001EC0C0 /* SceneDelegate.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D705CD26260777A100F284C3 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		D705CD27260777A100F284C3 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		D76013E825EFDD9900ADE8CC /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		D76013E925EFDD9900ADE8CC /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
 		D7921FCD25C94C58001EC0C0 /* tiny-react-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiny-react-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D705CD252607778A00F284C3 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				D705CD26260777A100F284C3 /* Bridge.h */,
+				D705CD27260777A100F284C3 /* Bridge.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
 		D76013E725EFDD7700ADE8CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,7 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D705CD252607778A00F284C3 /* Bridge */,
 				D794E7872600AF4800458039 /* FileLoader */,
 				D76013E725EFDD7700ADE8CC /* Manager */,
 				D7921FF425C9687C001EC0C0 /* Console */,
@@ -211,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7921FD825C94C58001EC0C0 /* ViewController.m in Sources */,
+				D705CD28260777A100F284C3 /* Bridge.m in Sources */,
 				D7921FF725C9689A001EC0C0 /* Console.m in Sources */,
 				D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */,
 				D7921FE325C94C5A001EC0C0 /* main.m in Sources */,

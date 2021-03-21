@@ -1,4 +1,4 @@
-import RNManager from './RNManager'
+import Bridge from './Bridge'
 import Reconciler from 'react-reconciler'
 
 const HostConfig = {
@@ -11,7 +11,7 @@ const HostConfig = {
     currentHostContext,
     workInProgress
   ) {
-    return RNManager.createElement(type)
+    return Bridge.createElement(type, newProps)
   },
   /* 操作子组件 */
   appendInitialChild(parent, child) {
@@ -91,7 +91,7 @@ const reconcilerInstance = Reconciler(HostConfig)
 
 const CanvasRenderer = {
   render(element, renderDom, callback) {
-    const root = RNManager.createRoot(renderDom)
+    const root = Bridge.createRoot(renderDom)
     const isAsync = false // Disables async rendering
     const container = reconcilerInstance.createContainer(root, isAsync) // Creates root fiber node.
     const parentComponent = null // Since there is no parent (since this is the root fiber). We set parentComponent to null.

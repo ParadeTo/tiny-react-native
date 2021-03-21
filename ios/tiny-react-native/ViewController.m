@@ -10,6 +10,7 @@
 #import "RNView/RNView.h"
 #import "FileLoader.h"
 #import "Console.h"
+#import "Bridge.h"
 #import "Manager.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
@@ -36,16 +37,16 @@
 //    NSString * path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"js"];
 //    NSData * jsData = [[NSData alloc]initWithContentsOfFile:path];
 //    NSString * jsCode = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
-//    self.jsContext = [[JSContext alloc]init];
+    self.jsContext = [[JSContext alloc]init];
 //    NSString *jsCode = @"function hi(){ return 'hi' }; hi()";
 //    JSValue *value1 = [self.jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
 //    NSLog([value1 toString]);
 //    JSValue *value2 = [self.jsContext evaluateScript:@"(function() { return 'hello objc' })"];
 //    NSLog([[value2 callWithArguments:nil] toString]);
 //    Manager *m = [[Manager alloc] init];
-//    Console *c = [[Console alloc] init];
+    Bridge *b = [[Bridge alloc] init];
 //    self.jsContext[@"Manager"] = m;
-//    self.jsContext[@"myconsole"] = c;
+    self.jsContext[@"RNBridge"] = b;
 //    JSValue *value3 = [self.jsContext evaluateScript:@"myconsole.log('aaa')"];
 //    NSLog([value3 toString]);
 //    Console *c = [[Console alloc] init];
@@ -59,7 +60,14 @@
 //    JSValue *value4 = [self.jsContext evaluateScript:@"addRNView()"];
     FileLoader *loader = [[FileLoader alloc] init];
     [loader loadJsFile:^(BOOL success, NSString * _Nonnull path) {
-        NSLog(path);
+        NSData * jsData = [[NSData alloc]initWithContentsOfFile:path];
+        NSString * jsCode = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
+        self.jsContext.exceptionHandler = ^(JSContext *con, JSValue *exception) {
+            NSLog(@"%@", exception);
+            con.exception = exception;
+        };
+        JSValue *value3 = [self.jsContext evaluateScript:jsCode];
+//        JSValue *value3 = [self.jsContext evaluateScript:@"RNBridge.send({operation: 'ddd'})"];
     }];
 }
 
