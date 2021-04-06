@@ -13,9 +13,9 @@
 - (void) send:(NSString *)msg {
      // 序列化 json 字符串
     NSError *jsonError;
-    id jsonObj = [NSJSONSerialization JSONObjectWithData:msg options:0 error:&jsonError];
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:[msg dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
     NSString *operation = [jsonObj objectForKey:@"operation"];
-    
+
     if (operation == @"createView") {
         NSDictionary *data = [jsonObj objectForKey:@"data"];
         NSString* x = [data objectForKey:@"x"];

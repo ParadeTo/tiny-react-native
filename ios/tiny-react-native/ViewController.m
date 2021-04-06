@@ -11,6 +11,7 @@
 #import "FileLoader.h"
 #import "Console.h"
 #import "Bridge.h"
+#import "Timer.h"
 #import "Manager.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
@@ -31,43 +32,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self addRNView];/Users/youxingzhi/Desktop/tiny-react-native/index.js
-    // Do any additional setup after loading the view.
-    
-//    NSString * path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"js"];
-//    NSData * jsData = [[NSData alloc]initWithContentsOfFile:path];
-//    NSString * jsCode = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
+
     self.jsContext = [[JSContext alloc]init];
-//    NSString *jsCode = @"function hi(){ return 'hi' }; hi()";
-//    JSValue *value1 = [self.jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
-//    NSLog([value1 toString]);
-//    JSValue *value2 = [self.jsContext evaluateScript:@"(function() { return 'hello objc' })"];
-//    NSLog([[value2 callWithArguments:nil] toString]);
-//    Manager *m = [[Manager alloc] init];
+
     Bridge *b = [[Bridge alloc] init];
-//    self.jsContext[@"Manager"] = m;
+
+
     self.jsContext[@"RNBridge"] = b;
-//    JSValue *value3 = [self.jsContext evaluateScript:@"myconsole.log('aaa')"];
-//    NSLog([value3 toString]);
-//    Console *c = [[Console alloc] init];
-//    [self.jsContext setExceptionHandler:^(JSContext *context, JSValue *value) {
-//           NSLog(@"%@", value);
-//       }];
-//    NSLog([value3 toString]);
-//    self.jsContext[@"addRNView"] = ^{
-//        [self addRNView];
-//    };
-//    JSValue *value4 = [self.jsContext evaluateScript:@"addRNView()"];
+    self.jsContext[@"window"] = [[NSObject alloc] init];
+    [Timer registerTimerFunc:self.jsContext];
+    
     FileLoader *loader = [[FileLoader alloc] init];
-    [loader loadJsFile:^(BOOL success, NSString * _Nonnull path) {
-        NSData * jsData = [[NSData alloc]initWithContentsOfFile:path];
-        NSString * jsCode = [[NSString alloc]initWithData:jsData encoding:NSUTF8StringEncoding];
+    [loader loadJsFile:^(BOOL success, NSString * _Nonnull code) {
         self.jsContext.exceptionHandler = ^(JSContext *con, JSValue *exception) {
             NSLog(@"%@", exception);
             con.exception = exception;
         };
-        JSValue *value3 = [self.jsContext evaluateScript:jsCode];
-//        JSValue *value3 = [self.jsContext evaluateScript:@"RNBridge.send({operation: 'ddd'})"];
+        JSValue *value3 = [self.jsContext evaluateScript:code];
     }];
 }
 

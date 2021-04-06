@@ -15,18 +15,11 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSession *session =  [NSURLSession sharedSession];
-    
+
     __weak typeof(self) weakSelf = self;
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        NSString* filename = [weakSelf _archiveBundle:data];
-//        NSLog();
-        NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSString *filename = [self _archiveBundle:myString];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (finishBlock) {
-                finishBlock(error == nil, filename);
-            }
-        });
+        NSString *code = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        finishBlock(error == nil, code);
     }];
     [dataTask resume];
 }
@@ -35,12 +28,12 @@
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cachePath = [pathArray firstObject];
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    
+
     // 创建文件夹
     NSString *dataPath = [cachePath stringByAppendingPathComponent:@"TinyRN"];
     NSError *createError;
     [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
-    
+
     // 创建文件
     NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"bundle.js"];
 //    NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
