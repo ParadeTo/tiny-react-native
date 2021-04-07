@@ -5,7 +5,7 @@
 //  Created by You Xingzhi on 2021/2/2.
 //  Copyright © 2021 youxingzhi. All rights reserved.
 //
-
+#import "RNView.h"
 #import "ViewController.h"
 #import "RNView/RNView.h"
 #import "FileLoader.h"
@@ -35,8 +35,7 @@
 
     self.jsContext = [[JSContext alloc]init];
 
-    Bridge *b = [[Bridge alloc] init];
-
+    Bridge *b = [[Bridge alloc] initWithRootViewController:self];
 
     self.jsContext[@"RNBridge"] = b;
     self.jsContext[@"window"] = [[NSObject alloc] init];

@@ -17,14 +17,14 @@ const HostConfig = {
   appendInitialChild(parent, child) {
     debugger
 
-    parent.appendChild(child)
+    Bridge.appendChild(parent, child)
   },
   appendChildToContainer(parent, child) {
-    parent.appendChild(child)
+    Bridge.appendChild(parent, child)
     debugger
   },
   appendChild: function (parent, child) {
-    parent.appendChild(child)
+    Bridge.appendChild(parent, child)
   },
   insertBefore(parent, child, beforeChild) {
     parent.insertBefore(child, beforeChild)

@@ -1,3 +1,3 @@
-const viewComp = 'RNView'
+const viewComp = 'View'
 
 export default viewComp
