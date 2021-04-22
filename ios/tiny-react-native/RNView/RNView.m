@@ -26,4 +26,17 @@
     return self;
 }
 
+- (void) update:(NSDictionary*)props {
+    NSString* x = [props objectForKey:@"x"];
+    NSString* y = [props objectForKey:@"y"];
+    NSString* w = [props objectForKey:@"w"];
+    NSString* h = [props objectForKey:@"h"];
+    NSString* r = [props objectForKey:@"r"];
+    NSString* g = [props objectForKey:@"g"];
+    NSString* b = [props objectForKey:@"b"];
+    NSString* a = [props objectForKey:@"a"];
+    self.frame = CGRectMake([x floatValue], [y floatValue], [w floatValue], [h floatValue]);
+    self.backgroundColor = [UIColor colorWithRed:[r floatValue] green:[g floatValue] blue:[b floatValue] alpha:[a floatValue]];
+}
+
 @end

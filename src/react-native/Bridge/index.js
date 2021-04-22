@@ -1,3 +1,5 @@
+import {View} from '..'
+
 const eleMap = {}
 function randomStr(length = 4) {
   var result = []
@@ -36,5 +38,8 @@ export default {
   },
   appendChild(parent, child) {
     RNBridge.send(JSON.stringify({operation: 'appendChild', parent, child}))
+  },
+  update(instance, props) {
+    RNBridge.send(JSON.stringify({operation: 'update', instance, props}))
   },
 }

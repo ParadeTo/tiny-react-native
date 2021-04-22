@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D705CD28260777A100F284C3 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D705CD27260777A100F284C3 /* Bridge.m */; };
-		D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D76013E925EFDD9900ADE8CC /* Manager.m */; };
+		D75235BD261EF0DC0077C045 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = D75235BC261EF0DC0077C045 /* Window.m */; };
 		D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD125C94C58001EC0C0 /* AppDelegate.m */; };
 		D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD425C94C58001EC0C0 /* SceneDelegate.m */; };
 		D7921FD825C94C58001EC0C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FD725C94C58001EC0C0 /* ViewController.m */; };
@@ -19,14 +19,15 @@
 		D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FEB25C94D72001EC0C0 /* RNView.m */; };
 		D7921FF725C9689A001EC0C0 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = D7921FF625C9689A001EC0C0 /* Console.m */; };
 		D794E78A2600AF7000458039 /* FileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D794E7892600AF7000458039 /* FileLoader.m */; };
+		D796F271263171F1001B9C16 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D796F270263171F1001B9C16 /* Person.m */; };
 		D7A333E3261C50CE00B994D3 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A333E2261C50CE00B994D3 /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D705CD26260777A100F284C3 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		D705CD27260777A100F284C3 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
-		D76013E825EFDD9900ADE8CC /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
-		D76013E925EFDD9900ADE8CC /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		D75235BB261EF0DC0077C045 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		D75235BC261EF0DC0077C045 /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 		D7921FCD25C94C58001EC0C0 /* tiny-react-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiny-react-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7921FD025C94C58001EC0C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7921FD125C94C58001EC0C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,12 +42,13 @@
 		D7921FE225C94C5A001EC0C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7921FEA25C94D72001EC0C0 /* RNView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNView.h; sourceTree = "<group>"; };
 		D7921FEB25C94D72001EC0C0 /* RNView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNView.m; sourceTree = "<group>"; };
-		D7921FEE25C954C1001EC0C0 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		D7921FF225C96460001EC0C0 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		D7921FF525C9689A001EC0C0 /* Console.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Console.h; sourceTree = "<group>"; };
 		D7921FF625C9689A001EC0C0 /* Console.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Console.m; sourceTree = "<group>"; };
 		D794E7882600AF7000458039 /* FileLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileLoader.h; sourceTree = "<group>"; };
 		D794E7892600AF7000458039 /* FileLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileLoader.m; sourceTree = "<group>"; };
+		D796F26F263171F1001B9C16 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		D796F270263171F1001B9C16 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		D7A333E1261C50CE00B994D3 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		D7A333E2261C50CE00B994D3 /* Timer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +73,13 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
-		D76013E725EFDD7700ADE8CC /* Manager */ = {
+		D75235BA261EF0C40077C045 /* Window */ = {
 			isa = PBXGroup;
 			children = (
-				D76013E825EFDD9900ADE8CC /* Manager.h */,
-				D76013E925EFDD9900ADE8CC /* Manager.m */,
+				D75235BB261EF0DC0077C045 /* Window.h */,
+				D75235BC261EF0DC0077C045 /* Window.m */,
 			);
-			path = Manager;
+			path = Window;
 			sourceTree = "<group>";
 		};
 		D7921FC425C94C58001EC0C0 = {
@@ -100,12 +102,12 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D796F272263171FD001B9C16 /* Person */,
+				D75235BA261EF0C40077C045 /* Window */,
 				D7A333E0261C50B600B994D3 /* Timer */,
 				D705CD252607778A00F284C3 /* Bridge */,
 				D794E7872600AF4800458039 /* FileLoader */,
-				D76013E725EFDD7700ADE8CC /* Manager */,
 				D7921FF425C9687C001EC0C0 /* Console */,
-				D7921FED25C954A9001EC0C0 /* js */,
 				D7921FE925C94D26001EC0C0 /* RNView */,
 				D7921FD025C94C58001EC0C0 /* AppDelegate.h */,
 				D7921FD125C94C58001EC0C0 /* AppDelegate.m */,
@@ -131,14 +133,6 @@
 			path = RNView;
 			sourceTree = "<group>";
 		};
-		D7921FED25C954A9001EC0C0 /* js */ = {
-			isa = PBXGroup;
-			children = (
-				D7921FEE25C954C1001EC0C0 /* index.js */,
-			);
-			path = js;
-			sourceTree = "<group>";
-		};
 		D7921FF425C9687C001EC0C0 /* Console */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +149,15 @@
 				D794E7892600AF7000458039 /* FileLoader.m */,
 			);
 			path = FileLoader;
+			sourceTree = "<group>";
+		};
+		D796F272263171FD001B9C16 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				D796F26F263171F1001B9C16 /* Person.h */,
+				D796F270263171F1001B9C16 /* Person.m */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 		D7A333E0261C50B600B994D3 /* Timer */ = {
@@ -242,10 +245,11 @@
 				D7921FD225C94C58001EC0C0 /* AppDelegate.m in Sources */,
 				D7921FE325C94C5A001EC0C0 /* main.m in Sources */,
 				D7A333E3261C50CE00B994D3 /* Timer.m in Sources */,
+				D796F271263171F1001B9C16 /* Person.m in Sources */,
 				D7921FD525C94C58001EC0C0 /* SceneDelegate.m in Sources */,
+				D75235BD261EF0DC0077C045 /* Window.m in Sources */,
 				D7921FEC25C94D72001EC0C0 /* RNView.m in Sources */,
 				D794E78A2600AF7000458039 /* FileLoader.m in Sources */,
-				D76013EA25EFDD9900ADE8CC /* Manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

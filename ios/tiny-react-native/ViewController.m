@@ -12,7 +12,8 @@
 #import "Console.h"
 #import "Bridge.h"
 #import "Timer.h"
-#import "Manager.h"
+#import "Window.h"
+#import "Person/Person.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
 @interface ViewController ()
@@ -21,26 +22,29 @@
 
 @implementation ViewController
 
-- (void)addRNView {
-    [self.view addSubview:[[RNView alloc] initWithFrame: CGRectMake(50, 50, 100, 100)]];
-}
-
-- (Console*) createConsole {
-    Console *c = [[Console alloc] init];
-    return c;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.jsContext = [[JSContext alloc]init];
+//    JSContext *jsCtx = [[JSContext alloc]init];
+//    JSValue *value = [jsCtx evaluateScript:@"function hi(){ return 'hi' }; hi()"];
+//    NSLog(@"%@", value);
 
-    Bridge *b = [[Bridge alloc] initWithRootViewController:self];
-
-    self.jsContext[@"RNBridge"] = b;
-    self.jsContext[@"window"] = [[NSObject alloc] init];
-    [Timer registerTimerFunc:self.jsContext];
+//    jsCtx[@"log"] = ^(NSString *msg){
+//        NSLog(@"js:msg:%@",msg);
+//    };
+//    [jsCtx evaluateScript:@"log('hello,i am js side')"];
     
+//    Person *p = [[Person alloc]init];
+//    jsCtx[@"person"] = p;
+//    JSValue *name = [jsCtx evaluateScript:@"person.whatYouName()"];
+//    NSLog(@"%@",name);
+//    self.jsContext = [[JSContext alloc]init];
+
+    self.jsContext = [[JSContext alloc]init];
+    self.jsContext[@"RNBridge"] = [[Bridge alloc] initWithRootViewController:self];
+    self.jsContext[@"window"] = [[Window alloc] init];
+    [Timer registerTimerFunc:self.jsContext];
+
     FileLoader *loader = [[FileLoader alloc] init];
     [loader loadJsFile:^(BOOL success, NSString * _Nonnull code) {
         self.jsContext.exceptionHandler = ^(JSContext *con, JSValue *exception) {

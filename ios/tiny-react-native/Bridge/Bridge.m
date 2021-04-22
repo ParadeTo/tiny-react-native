@@ -22,9 +22,6 @@
     if (self) {
         self.eleDict = [[NSMutableDictionary alloc] init];
         self.rootViewController = rootViewController;
-//        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//        UIViewController *rootViewController = appDelegate.window.rootViewController;
-//        [self.eleDict setObject:rootViewController forKey:@"root"];
     }
     return self;
 }
@@ -50,6 +47,7 @@
         });
     } else if ([operation isEqualToString:@"createRoot"]) {
         __weak typeof(self) weakSelf = self;
+        // 放到任务队列中才能修改 UI
         dispatch_async(dispatch_get_main_queue(), ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
 //            AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
@@ -72,6 +70,12 @@
                 [parentEle addSubview:childEle];
             }
         });
+    } else if ([operation isEqualToString:@"update"]) {
+        NSString* instance = [jsonObj objectForKey:@"instance"];
+        NSDictionary* props = [jsonObj objectForKey:@"props"];
+        RNView* ele = (RNView *)[self.eleDict valueForKey:instance];
+        [ele update:props];
+        NSLog(@"%@", ele);
     }
 }
 @end

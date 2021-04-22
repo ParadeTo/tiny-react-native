@@ -15,13 +15,10 @@ const HostConfig = {
   },
   /* 操作子组件 */
   appendInitialChild(parent, child) {
-    debugger
-
     Bridge.appendChild(parent, child)
   },
   appendChildToContainer(parent, child) {
     Bridge.appendChild(parent, child)
-    debugger
   },
   appendChild: function (parent, child) {
     Bridge.appendChild(parent, child)
@@ -42,7 +39,8 @@ const HostConfig = {
     newProps,
     finishedWork
   ) {
-    instance.update(newProps)
+    Bridge.update(instance, newProps)
+    // instance.update(newProps)
   },
 
   resetAfterCommit: function (rootContainerInstance) {},
