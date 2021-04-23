@@ -23,21 +23,4 @@
     }];
     [dataTask resume];
 }
-
-- (NSString *) _archiveBundle:(NSString *)data {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [pathArray firstObject];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-
-    // 创建文件夹
-    NSString *dataPath = [cachePath stringByAppendingPathComponent:@"TinyRN"];
-    NSError *createError;
-    [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
-
-    // 创建文件
-    NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"bundle.js"];
-//    NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
-    [fileManager createFileAtPath:listDataPath contents:data attributes:nil];
-    return listDataPath;
-}
 @end
