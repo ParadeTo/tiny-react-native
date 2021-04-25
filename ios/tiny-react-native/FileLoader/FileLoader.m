@@ -10,8 +10,8 @@
 
 @implementation FileLoader
 - (void)loadJsFile:(LoadedJsFileFinishBlock)finishBlock {
-//    NSString *urlString = @"http://localhost:3000/static/js/bundle.js";
-    NSString *urlString = @"http://localhost:5000/static/js/main.4228be85.js";
+    NSString *urlString = @"http://localhost:3000/bundle.js";
+//    NSString *urlString = @"http://localhost:5000/static/js/main.4228be85.js";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSession *session =  [NSURLSession sharedSession];

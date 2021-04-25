@@ -1,30 +1,48 @@
+import React from 'react'
 import {View} from './react-native'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 
 const W = 100
 const innerW = 50
 
-function App() {
-  const [x, setX] = useState(0)
-  // const [y, setY] = useState(0)
-  useEffect(() => {
-    setTimeout(() => {
-      // if (y === 0 && x < W - innerW) {
-      //   setX(x + 1)
-      // } else if (x === W - innerW && y < W - innerW) {
-      //   setY(y + 1)
-      // } else if (y === W - innerW && x > 0) {
-      //   setX(x - 1)
-      // } else {
-      //   setY(y - 1)
-      // }
+function useUpdate() {
+  const [_, _update] = useState()
+  return () => _update(Math.random())
+}
 
-      setX(20)
-    }, 2000)
+function App() {
+  const x = useRef(0)
+  const y = useRef(0)
+  const update = useUpdate()
+  const animate = () => {
+    setTimeout(() => {
+      if (y.current === 0 && x.current < W - innerW) {
+        x.current += 1
+      } else if (x.current >= W - innerW && y.current < W - innerW) {
+        y.current += 1
+      } else if (y.current >= W - innerW && x.current > 0) {
+        x.current -= 1
+      } else {
+        y.current -= 1
+      }
+      update()
+      animate()
+    }, 50)
+  }
+  useEffect(() => {
+    animate()
   }, [])
   return (
-    <View x={20} y={20} w={W} h={W} r={255} g={0} b={0} a={1}>
-      <View x={x} y={10} w={innerW} h={innerW} r={0} g={255} b={0} a={1}></View>
+    <View x={50} y={50} w={W} h={W} r={255} g={0} b={0} a={1}>
+      <View
+        x={x.current}
+        y={y.current}
+        w={innerW}
+        h={innerW}
+        r={0}
+        g={255}
+        b={0}
+        a={1}></View>
     </View>
   )
 }
