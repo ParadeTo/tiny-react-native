@@ -1,5 +1,5 @@
 import React from 'react'
-import {View} from './react-native'
+import {View, Text} from './react-native'
 import {useEffect, useState, useRef} from 'react'
 
 const W = 100
@@ -33,18 +33,38 @@ function App() {
     animate()
   }, [])
   return (
-    <View x={50} y={50} w={W} h={W} r={255} g={0} b={0} a={1}>
-      <View
-        x={x.current}
-        y={y.current}
-        w={innerW}
-        h={innerW}
-        r={0}
-        g={255}
-        b={0}
-        a={1}></View>
-    </View>
+    <>
+      <Text x={50} y={50} w={W} h={W} r={0} g={0} b={0} a={1} fontSize={16}>
+        Tiny React Native
+      </Text>
+      <View x={50} y={100} w={W} h={W} r={255} g={0} b={0} a={1}>
+        <View
+          x={x.current}
+          y={y.current}
+          w={innerW}
+          h={innerW}
+          r={0}
+          g={255}
+          b={0}
+          a={1}>
+          <Text
+            x={18}
+            y={13}
+            w={50}
+            h={50}
+            r={0}
+            g={0}
+            b={255}
+            a={1}
+            fontSize={20}>
+            S
+          </Text>
+        </View>
+      </View>
+    </>
   )
 }
 
 export default App
+
+/*  */

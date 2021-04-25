@@ -21,6 +21,7 @@
 		D794E78A2600AF7000458039 /* FileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D794E7892600AF7000458039 /* FileLoader.m */; };
 		D796F271263171F1001B9C16 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D796F270263171F1001B9C16 /* Person.m */; };
 		D7A333E3261C50CE00B994D3 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A333E2261C50CE00B994D3 /* Timer.m */; };
+		D7E049C3263517FB005795C6 /* RNText.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E049C2263517FB005795C6 /* RNText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		D796F270263171F1001B9C16 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		D7A333E1261C50CE00B994D3 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		D7A333E2261C50CE00B994D3 /* Timer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		D7E049C1263517FB005795C6 /* RNText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNText.h; sourceTree = "<group>"; };
+		D7E049C2263517FB005795C6 /* RNText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				D7E049C026351726005795C6 /* RNText */,
 				D796F272263171FD001B9C16 /* Person */,
 				D75235BA261EF0C40077C045 /* Window */,
 				D7A333E0261C50B600B994D3 /* Timer */,
@@ -167,6 +171,15 @@
 				D7A333E2261C50CE00B994D3 /* Timer.m */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		D7E049C026351726005795C6 /* RNText */ = {
+			isa = PBXGroup;
+			children = (
+				D7E049C1263517FB005795C6 /* RNText.h */,
+				D7E049C2263517FB005795C6 /* RNText.m */,
+			);
+			path = RNText;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E049C3263517FB005795C6 /* RNText.m in Sources */,
 				D7921FD825C94C58001EC0C0 /* ViewController.m in Sources */,
 				D705CD28260777A100F284C3 /* Bridge.m in Sources */,
 				D7921FF725C9689A001EC0C0 /* Console.m in Sources */,

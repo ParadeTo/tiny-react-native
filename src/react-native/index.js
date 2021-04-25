@@ -82,7 +82,9 @@ const HostConfig = {
     currentHostContext,
     workInProgress
   ) {},
-  shouldSetTextContent: function (...args) {},
+  shouldSetTextContent: function (type, ...args) {
+    return type === 'Text'
+  },
 }
 
 const reconcilerInstance = Reconciler(HostConfig)
@@ -105,3 +107,4 @@ const CanvasRenderer = {
 
 export default CanvasRenderer
 export {default as View} from './View'
+export {default as Text} from './Text'

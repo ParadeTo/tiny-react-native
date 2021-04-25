@@ -6,6 +6,7 @@
 //  Copyright © 2021 youxingzhi. All rights reserved.
 //
 #import "RNView.h"
+#import "RNText.h"
 #import "ViewController.h"
 #import "RNView/RNView.h"
 #import "FileLoader.h"
@@ -53,6 +54,12 @@
         };
         JSValue *value3 = [self.jsContext evaluateScript:code];
     }];
+ 
+    
+//    NSDictionary *dic = @{@"x": @"50", @"y": @"50", @"w": @"50", @"h": @"50", @"r": @"255", @"g": @"0", @"b": @"0", @"a": @"1", @"children": @"ayou", @"fontSize": @"40"};
+//    
+//    RNText* text = [[RNText alloc] init:dic];
+//    [self.view addSubview:text];
 }
 
 

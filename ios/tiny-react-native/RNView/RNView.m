@@ -18,10 +18,10 @@
 }
 */
 
-- (instancetype)initWithFrame:(CGRect)frame red:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha {
-    self = [super initWithFrame:frame];
+- (instancetype)init:(NSDictionary*)props {
+    self = [super initWithFrame:CGRectMake(0, 0, 0, 0)];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        [self update:props];
     }
     return self;
 }

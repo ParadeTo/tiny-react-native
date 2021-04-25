@@ -8,6 +8,7 @@
 
 #import "Bridge.h"
 #import "RNView.h"
+#import "RNText.h"
 #import "AppDelegate.h"
 
 @interface Bridge ()
@@ -31,29 +32,24 @@
     id jsonObj = [NSJSONSerialization JSONObjectWithData:[msg dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
     NSString *operation = [jsonObj objectForKey:@"operation"];
 
-    if ([operation isEqualToString:@"createView"]) {
-        NSDictionary *data = [jsonObj objectForKey:@"props"];
-        NSString* x = [data objectForKey:@"x"];
-        NSString* y = [data objectForKey:@"y"];
-        NSString* w = [data objectForKey:@"w"];
-        NSString* h = [data objectForKey:@"h"];
-        NSString* r = [data objectForKey:@"r"];
-        NSString* g = [data objectForKey:@"g"];
-        NSString* b = [data objectForKey:@"b"];
-        NSString* a = [data objectForKey:@"a"];
+    if ([operation isEqualToString:@"createText"]) {
+        NSDictionary *props = [jsonObj objectForKey:@"props"];
         NSString* _id = [jsonObj objectForKey:@"id"];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.eleDict setObject:[[RNView alloc] initWithFrame:CGRectMake([x floatValue], [y floatValue], [w floatValue], [h floatValue]) red:[r floatValue] green:[g floatValue] blue:[b floatValue] alpha:[a floatValue]] forKey:_id];
+            [self.eleDict setObject:[[RNText alloc] init:props] forKey:_id];
+        });
+    } else if ([operation isEqualToString:@"createView"]) {
+        NSDictionary *props = [jsonObj objectForKey:@"props"];
+        NSString* _id = [jsonObj objectForKey:@"id"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.eleDict setObject:[[RNView alloc] init:props] forKey:_id];
         });
     } else if ([operation isEqualToString:@"createRoot"]) {
         __weak typeof(self) weakSelf = self;
         // 放到任务队列中才能修改 UI
         dispatch_async(dispatch_get_main_queue(), ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
-//            AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//            UIViewController *rootViewController = appDelegate.window.rootViewController;
             [strongSelf.eleDict setObject:[[NSObject alloc] init] forKey:@"root"];
-//            NSLog(strongSelf.eleDict);
         });
     } else if ([operation isEqualToString:@"appendChild"]) {
         NSString* parent = [jsonObj objectForKey:@"parent"];
@@ -66,7 +62,7 @@
                 [self.rootViewController.view addSubview:childEle];
             } else {
                 RNView* parentEle = (RNView *)[self.eleDict valueForKey:parent];
-                RNView* childEle = (RNView *)[self.eleDict valueForKey:child];
+                RNText* childEle = (RNText *)[self.eleDict valueForKey:child];
                 [parentEle addSubview:childEle];
             }
         });
