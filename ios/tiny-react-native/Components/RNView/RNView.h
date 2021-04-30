@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Component.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RNView : UIView
-- (void) update:(NSDictionary*)props;
-- (instancetype)init:(NSDictionary*)props;
+@interface RNView : UIView<Component>
+
 @end
 
 NS_ASSUME_NONNULL_END

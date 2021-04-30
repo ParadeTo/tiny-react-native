@@ -7,8 +7,8 @@
 //
 
 #import "Bridge.h"
-#import "RNView.h"
 #import "RNText.h"
+#import "RNView.h"
 #import "AppDelegate.h"
 
 @interface Bridge ()
@@ -58,20 +58,19 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if ([parent isEqualToString:@"root"]) {
-                RNView* childEle = (RNView *)[self.eleDict valueForKey:child];
+                id childEle = [self.eleDict valueForKey:child];
                 [self.rootViewController.view addSubview:childEle];
             } else {
-                RNView* parentEle = (RNView *)[self.eleDict valueForKey:parent];
-                RNText* childEle = (RNText *)[self.eleDict valueForKey:child];
+                id parentEle = [self.eleDict valueForKey:parent];
+                id childEle = [self.eleDict valueForKey:child];
                 [parentEle addSubview:childEle];
             }
         });
     } else if ([operation isEqualToString:@"update"]) {
         NSString* instance = [jsonObj objectForKey:@"instance"];
         NSDictionary* props = [jsonObj objectForKey:@"props"];
-        RNView* ele = (RNView *)[self.eleDict valueForKey:instance];
+        id ele = [self.eleDict valueForKey:instance];
         [ele update:props];
-        NSLog(@"%@", ele);
     }
 }
 @end

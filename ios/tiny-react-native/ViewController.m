@@ -8,7 +8,7 @@
 #import "RNView.h"
 #import "RNText.h"
 #import "ViewController.h"
-#import "RNView/RNView.h"
+#import "RNView.h"
 #import "FileLoader.h"
 #import "Console.h"
 #import "Bridge.h"

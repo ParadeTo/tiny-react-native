@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Component.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RNText : UILabel
+@interface RNText : UILabel<Component>
 - (void) update:(NSDictionary*)props;
 - (instancetype)init:(NSDictionary*)props;
 @end

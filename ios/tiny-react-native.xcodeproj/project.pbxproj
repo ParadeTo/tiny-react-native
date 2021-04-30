@@ -50,6 +50,7 @@
 		D794E7892600AF7000458039 /* FileLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileLoader.m; sourceTree = "<group>"; };
 		D796F26F263171F1001B9C16 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		D796F270263171F1001B9C16 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		D799BF5A263C130500EE1DA6 /* Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		D7A333E1261C50CE00B994D3 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		D7A333E2261C50CE00B994D3 /* Timer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		D7E049C1263517FB005795C6 /* RNText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNText.h; sourceTree = "<group>"; };
@@ -105,14 +106,13 @@
 		D7921FCF25C94C58001EC0C0 /* tiny-react-native */ = {
 			isa = PBXGroup;
 			children = (
-				D7E049C026351726005795C6 /* RNText */,
+				D799BF55263C101800EE1DA6 /* Components */,
 				D796F272263171FD001B9C16 /* Person */,
 				D75235BA261EF0C40077C045 /* Window */,
 				D7A333E0261C50B600B994D3 /* Timer */,
 				D705CD252607778A00F284C3 /* Bridge */,
 				D794E7872600AF4800458039 /* FileLoader */,
 				D7921FF425C9687C001EC0C0 /* Console */,
-				D7921FE925C94D26001EC0C0 /* RNView */,
 				D7921FD025C94C58001EC0C0 /* AppDelegate.h */,
 				D7921FD125C94C58001EC0C0 /* AppDelegate.m */,
 				D7921FD325C94C58001EC0C0 /* SceneDelegate.h */,
@@ -162,6 +162,16 @@
 				D796F270263171F1001B9C16 /* Person.m */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		D799BF55263C101800EE1DA6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D7E049C026351726005795C6 /* RNText */,
+				D7921FE925C94D26001EC0C0 /* RNView */,
+				D799BF5A263C130500EE1DA6 /* Component.h */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D7A333E0261C50B600B994D3 /* Timer */ = {
